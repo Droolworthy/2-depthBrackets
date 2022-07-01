@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace CS18
 {
@@ -6,20 +6,28 @@ namespace CS18
     {
         static void Main(string[] args)
         {
-            string text = "()";
+            string text = Console.ReadLine();
             int maximumNestingDepth = 0;
+            int deep = 0;
 
             foreach (char symbol in text)
             {
                 if (symbol == '(')
                     maximumNestingDepth++;
-                
-            
+
+                if (deep > maximumNestingDepth)
+                    maximumNestingDepth++;
+
                 if (symbol == ')')
                     maximumNestingDepth--;
-                
 
-            if (maximumNestingDepth == 0)
+                if (deep < 0)
+                {
+                    break;
+                }
+            }
+
+            if (deep == 0)
             {
                 Console.WriteLine($"Корректное выражение. Макс глубина вложенности - {maximumNestingDepth}");
             }
@@ -27,4 +35,4 @@ namespace CS18
                 Console.WriteLine("Некорректное выражение.");
         }
     }
-}
+} 
