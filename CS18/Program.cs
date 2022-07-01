@@ -13,14 +13,11 @@ namespace CS18
             {
                 if (symbol == '(')
                     maximumNestingDepth++;
-                else
-                    maximumNestingDepth--;
+                
             
                 if (symbol == ')')
                     maximumNestingDepth--;
-                else
-                    maximumNestingDepth++;
-            }
+                
 
             if (maximumNestingDepth == 0)
             {
