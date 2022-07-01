@@ -13,13 +13,13 @@ namespace CS18
             foreach (char symbol in text)
             {
                 if (symbol == '(')
-                    maximumNestingDepth++;
+                    deep++;
 
                 if (deep > maximumNestingDepth)
                     maximumNestingDepth++;
 
                 if (symbol == ')')
-                    maximumNestingDepth--;
+                    deep--;
 
                 if (deep < 0)
                 {
@@ -35,4 +35,4 @@ namespace CS18
                 Console.WriteLine("Некорректное выражение.");
         }
     }
-} 
+}
